@@ -77,7 +77,10 @@
   .best-cell .tip-label { color: #2da44e; font-weight: 600; }
   .best-cell .tip-label::after { color: #2da44e; }
 
-  /* 소재 키워드 툴팁 */
+  /* 소재 키워드 툴팁 — td가 아닌 span 위에서만 트리거 */
+  .col-ptype { overflow: visible; }
+  .col-ptype .has-tip { position: relative; display: inline-block; }
+  .col-ptype .has-tip:hover .tip-box { display: block; }
   .tip-label-ptype { border-bottom: 1.5px dashed #aaa; cursor: default; }
   .tip-box-kw { min-width: 280px; max-width: 420px; display: flex;
                  flex-wrap: wrap; gap: 6px; padding: 12px 14px; }
@@ -128,8 +131,8 @@
       <th>성과후킹중앙값</th><th>중앙값차이(%)</th>
     </tr></thead>
     <tbody id="t1body"><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">세제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">세제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">옷 얼룩 제거제</span><span class="kw-tag">욕실 물때 제거제</span><span class="kw-tag">휴대용 옷 얼룩 제거제</span><span class="kw-tag">얼룩 전용 세제</span><span class="kw-tag">프랑스 다목적 세제</span><span class="kw-tag">얼룩제거제</span><span class="kw-tag">세탁기 클리너</span><span class="kw-tag">바닥용 광택 세제</span><span class="kw-tag">반찬통 세척제</span><span class="kw-tag">다목적 세척제</span><span class="kw-tag">세제 가루</span><span class="kw-tag">곰팡이 제거 스프레이</span><span class="kw-tag">다목적 세제</span><span class="kw-tag">강마하루 전용 세제</span><span class="kw-tag">얼룩 제거제</span><span class="kw-tag">바닥용 세제</span><span class="kw-tag">누런 양말 하얀색 세제</span><span class="kw-tag">욕실 곰팡이 제거제</span><span class="kw-tag">곰팡이 전용제</span><span class="kw-tag">바닥용 코팅 세제</span><span class="kw-tag">욕실 곰팡이/물때 제거제</span><span class="kw-tag">얼룩제거 시트</span><span class="kw-tag">세탁기 곰팡이 제거제</span><span class="kw-tag">녹 제거제</span><span class="kw-tag">시트형 세제</span><span class="kw-tag">세탁기 청소 가루</span><span class="kw-tag">주방세제</span><span class="kw-tag">신발 세제</span><span class="kw-tag">곰팡이 제거제</span><span class="kw-tag">얼룩 제거 스프레이</span><span class="kw-tag">기름때 제거제</span><span class="kw-tag">곰팡이 제거 및 차단제</span><span class="kw-tag">물때 방지 코팅 세제</span><span class="kw-tag">패딩 발수 복원제</span><span class="kw-tag">욕실용 세제</span><span class="kw-tag">세탁용 표백제</span><span class="kw-tag">대리석 클리닝 파우더</span><span class="kw-tag">얼룩 제거 물티슈</span><span class="kw-tag">세탁골테마 패딩</span><span class="kw-tag">세탁 표백제</span><span class="kw-tag">기름 얼룩 제거 가루</span><span class="kw-tag">세제</span><span class="kw-tag">알칼리성 세탁 때제거제</span><span class="kw-tag">세탁 때 제거제</span><span class="kw-tag">세척 파우더</span><span class="kw-tag">스펀지 일체형 화장실 청소 세제</span><span class="kw-tag">물때제거제 붓 매직블럭 세트</span></div>
     </td>
         <td>58</td>
@@ -146,8 +149,8 @@
         <td>2,652</td>
         <td style="color:#1a7f37;font-weight:700">+2%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">간식</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">간식</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">계란 요거트 간식</span><span class="kw-tag">누룽지</span><span class="kw-tag">5분 바삭한 간식</span><span class="kw-tag">바나나 계란 쿠키</span><span class="kw-tag">사과설기</span><span class="kw-tag">단백질 빵</span><span class="kw-tag">우유 토스트</span><span class="kw-tag">단백질 간식 (인절미 맛)</span><span class="kw-tag">치즈 칼슘 영양간식</span><span class="kw-tag">성장 간식 (요거트 계란 카스테라)</span><span class="kw-tag">감자새우놀이</span><span class="kw-tag">밀가루 없는 밥솥 카스테라</span><span class="kw-tag">밀가루 설탕 없는 바삭한 간식</span><span class="kw-tag">성장빵</span><span class="kw-tag">단백질 간식 (아몬드 가루 기반)</span><span class="kw-tag">계란 수제 간식</span><span class="kw-tag">바나나 계란 간식</span><span class="kw-tag">채소 바삭바삭 과자</span><span class="kw-tag">바나나 팬케이크</span><span class="kw-tag">성장 영양 아이스크림</span><span class="kw-tag">블루베리 찐빵</span><span class="kw-tag">당근튀김</span><span class="kw-tag">계란 요거트 성장 간식</span><span class="kw-tag">고구마 유기농 간식</span><span class="kw-tag">요거트 베이스 성장 간식</span><span class="kw-tag">시그니처 간식</span><span class="kw-tag">밀가루·설탕 없는 카스테라</span><span class="kw-tag">소간단 밀크롤</span><span class="kw-tag">대만 페스츄리</span><span class="kw-tag">딸기 모찌</span><span class="kw-tag">3가지 재료 간식</span><span class="kw-tag">홈메이드 아기 간식</span><span class="kw-tag">쌀 젤라또</span><span class="kw-tag">양파칩</span></div>
     </td>
         <td>34</td>
@@ -167,8 +170,8 @@
         <td>5,335</td>
         <td style="color:#1a7f37;font-weight:700">+84%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">선반</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">선반</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">슬라이딩 주방선반</span><span class="kw-tag">무타공 욕실 선반</span><span class="kw-tag">욕실장 수납 선반</span><span class="kw-tag">욕실용품 수납 선반</span><span class="kw-tag">벽부착식 선반</span><span class="kw-tag">스페인 리스트랙</span><span class="kw-tag">확장형 옷장 선반</span><span class="kw-tag">높이조절 철제선반</span><span class="kw-tag">욕실 문뒤 선반</span><span class="kw-tag">바퀴 달린 다층 수납 선반</span><span class="kw-tag">높이조절 슬라이딩 주방선반</span><span class="kw-tag">다기능 주방 선반</span><span class="kw-tag">주방 슬라이딩 트레이 선반</span><span class="kw-tag">자석형 욕실 선반</span><span class="kw-tag">모타공 벽 선반</span><span class="kw-tag">높이조절 슬라이딩 다층 주방선반</span><span class="kw-tag">문디 선반</span><span class="kw-tag">욕실 선반</span><span class="kw-tag">접이식 주방선반</span><span class="kw-tag">높이 조절 선반</span><span class="kw-tag">모듈형 조절식 선반</span><span class="kw-tag">슬라이딩 선반</span><span class="kw-tag">신축식 옷장 내부 확장 선반</span><span class="kw-tag">무타공 모듈 선반</span></div>
     </td>
         <td>26</td>
@@ -188,8 +191,8 @@
         <td>7,249</td>
         <td style="color:#1a7f37;font-weight:700">+249%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">수납장</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">수납장</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">서랍형 수납 캐비넷</span><span class="kw-tag">소파 틈새 수납장</span><span class="kw-tag">높이조절 이동식 주방수납선반</span><span class="kw-tag">책상 아래 수납장</span><span class="kw-tag">슬림 신발 수납장</span><span class="kw-tag">세면대 수납장</span><span class="kw-tag">2단 옷걸이 수납장</span><span class="kw-tag">셀프 설치식 주방 수납장</span><span class="kw-tag">회전식 코너 수납장</span><span class="kw-tag">탈부착 서랍 수납장</span><span class="kw-tag">투명 서랍 수납장</span><span class="kw-tag">플립도어 슬라이딩 선반 주방 수납장</span><span class="kw-tag">슬라이딩 수납장</span><span class="kw-tag">핑크 수납장</span><span class="kw-tag">슬림 냉장고 수납장</span><span class="kw-tag">신발 수납장</span><span class="kw-tag">양문형 미니 주방 수납장</span><span class="kw-tag">슬라이딩 투명 도어 수납장</span><span class="kw-tag">원목 스틸 코너 수납장</span><span class="kw-tag">틈새 수납장</span><span class="kw-tag">슬라이딩 선반 냉장고 수납장</span><span class="kw-tag">슬라이딩 히든 서랍</span><span class="kw-tag">접이식 틈새 수납장</span><span class="kw-tag">자석 벽부착 수납장</span><span class="kw-tag">철재 수납장</span></div>
     </td>
         <td>25</td>
@@ -209,8 +212,8 @@
         <td>39,592</td>
         <td style="color:#1a7f37;font-weight:700">+1810%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">코팅제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">코팅제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">유리 코팅제</span><span class="kw-tag">도장면 코팅제</span><span class="kw-tag">타일 줄눈 코팅제</span><span class="kw-tag">줄넘 코팅제</span><span class="kw-tag">그래핀 코팅</span><span class="kw-tag">도장면 광택 코팅제</span><span class="kw-tag">발수코팅제</span><span class="kw-tag">줄눈 코팅제</span><span class="kw-tag">자동차 코팅제</span><span class="kw-tag">자동차 광택 및 발수코팅제</span><span class="kw-tag">욕실 미끄럼 방지 코팅제</span><span class="kw-tag">욕실 특수코팅제</span><span class="kw-tag">나노 코팅제</span><span class="kw-tag">크리스탈 코팅막</span><span class="kw-tag">나노코팅 방수 스프레이</span><span class="kw-tag">욕실 타일 코팅제</span><span class="kw-tag">셀프코팅제</span><span class="kw-tag">자동차 광택 코팅제</span><span class="kw-tag">유리막 코팅제</span><span class="kw-tag">욕실 코팅제</span><span class="kw-tag">그래핀 코팅제</span></div>
     </td>
         <td>23</td>
@@ -230,8 +233,8 @@
         <td>9,141</td>
         <td style="color:#1a7f37;font-weight:700">+215%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">블라인드</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">블라인드</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">창틀 착장식 블라인드</span><span class="kw-tag">커튼형 블라인드</span><span class="kw-tag">무타공 블라인드</span><span class="kw-tag">맞춤형 윈도우 블라인드</span><span class="kw-tag">자석 슬라이더 줄 없는 블라인드</span><span class="kw-tag">줄 없는 블라인드</span><span class="kw-tag">이케아 블라인드</span><span class="kw-tag">맞춤 제작 타공없는 블라인드</span><span class="kw-tag">무타공 시폰 블라인드</span><span class="kw-tag">전동 블라인드</span><span class="kw-tag">양방향 전동 블라인드</span><span class="kw-tag">줄없는 맞춤형 블라인드</span><span class="kw-tag">타공 없는 블라인드</span><span class="kw-tag">무설치 블라인드</span><span class="kw-tag">각도조절 블라인드</span><span class="kw-tag">블라인드</span><span class="kw-tag">전동 블라인드 모터</span></div>
     </td>
         <td>19</td>
@@ -248,8 +251,8 @@
         <td>3,250</td>
         <td style="color:#cf222e;font-weight:700">-2%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">디저트</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">디저트</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">사과 베이킹 디저트</span><span class="kw-tag">구운 우유 푸딩</span><span class="kw-tag">초코 푸딩</span><span class="kw-tag">전자레인지 모찌</span><span class="kw-tag">꽃 모양 디저트</span><span class="kw-tag">밀가루 없는 단백질 디저트</span><span class="kw-tag">초콜릿 푸딩 레시피 키트</span><span class="kw-tag">딸기 식이섬유 디저트</span><span class="kw-tag">크림치즈 카라멜 비스킷 디저트</span><span class="kw-tag">딸기 디저트</span><span class="kw-tag">캔 디저트</span><span class="kw-tag">노오븐 초콜릿 디저트</span><span class="kw-tag">무설탕 디저트</span><span class="kw-tag">밀가루 없는 초콜릿 디저트</span><span class="kw-tag">스틱 페이스트리</span><span class="kw-tag">디저트 콘</span><span class="kw-tag">파티시아</span><span class="kw-tag">카페 신메뉴 디저트</span></div>
     </td>
         <td>18</td>
@@ -269,8 +272,8 @@
         <td>9,906</td>
         <td style="color:#1a7f37;font-weight:700">+167%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">침대</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">침대</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">수납형 침대 (매트리스 세트)</span><span class="kw-tag">고양이 침대</span><span class="kw-tag">리프트업 침대</span><span class="kw-tag">조립형 깔판 침대</span><span class="kw-tag">확장형 싱글-퀸 침대</span><span class="kw-tag">복층 침대 (미끄럼, 클라이밍 기능 포함)</span><span class="kw-tag">벙커 침대</span><span class="kw-tag">텐트형 침대</span><span class="kw-tag">침대 확장 가드</span><span class="kw-tag">연장보드 침대</span><span class="kw-tag">전동 높이조절 아기침대</span></div>
     </td>
         <td>15</td>
@@ -290,8 +293,8 @@
         <td>3,294</td>
         <td style="color:#1a7f37;font-weight:700">+29%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">필름</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">필름</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">접착식 단방향 블라인드 필름</span><span class="kw-tag">단방향 접착식 창문 썬팅필름</span><span class="kw-tag">드레싱 필름</span><span class="kw-tag">사생활 보호 필름</span><span class="kw-tag">냉장고 필름 스티커</span><span class="kw-tag">카메라 렌즈 보호 필름</span><span class="kw-tag">스마트 필름</span><span class="kw-tag">무전착 보호필름</span><span class="kw-tag">단열 차단 필름</span><span class="kw-tag">단방향 투시 단열 필름</span><span class="kw-tag">스마트 프라이버시 필름</span><span class="kw-tag">거울형 반사필름</span><span class="kw-tag">창문 프라이버시 필름</span><span class="kw-tag">휴대폰 화면보호 필름</span></div>
     </td>
         <td>15</td>
@@ -311,8 +314,8 @@
         <td>4,741</td>
         <td style="color:#1a7f37;font-weight:700">+68%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">장난감</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">장난감</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 따라가기 로봇</span><span class="kw-tag">홈메이드 플레이 도우</span><span class="kw-tag">비눗방울 탁구 라켓 세트</span><span class="kw-tag">벽부착식 놀이터 공판</span><span class="kw-tag">대화형 부화 알 장난감</span><span class="kw-tag">물에 부풀어나는 그리기 장난감</span><span class="kw-tag">베스킨라빈스 온도변색 목욕 장난감</span><span class="kw-tag">공룡알 로봇 장난감</span><span class="kw-tag">모래 장난감 세트</span><span class="kw-tag">홈메이드 슬라임</span><span class="kw-tag">리모컨 조종 탈것형 포크레인</span><span class="kw-tag">벽 다가오는 블록 쌓기 게임 장난감</span><span class="kw-tag">자동차 세차 장난감 세트</span><span class="kw-tag">물에 불리는 점토 키링 만들기 세트</span></div>
     </td>
         <td>14</td>
@@ -332,8 +335,8 @@
         <td>4,815</td>
         <td style="color:#1a7f37;font-weight:700">+18%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">식품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">식품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">식빵</span><span class="kw-tag">밥 첨가제</span><span class="kw-tag">미역</span><span class="kw-tag">다이어트 식이섬유 파우더</span><span class="kw-tag">사과 다이어트 식품</span><span class="kw-tag">단백질 칼슘 아침식사 (밀가루 없음)</span><span class="kw-tag">잡곡밥 영양 첨가제</span><span class="kw-tag">식혜 만드는 재료/효소</span><span class="kw-tag">계란 아몬드 가루 무설탕 요거트 아침식사</span><span class="kw-tag">몽글 프렌치 토스트</span><span class="kw-tag">단백질 칼슘 착한탄수화물 아침식사</span></div>
     </td>
         <td>13</td>
@@ -353,8 +356,8 @@
         <td>8,751</td>
         <td style="color:#1a7f37;font-weight:700">+95%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">테이블</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">테이블</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">게임 테이블</span><span class="kw-tag">그릴 내장 베란다 테이블</span><span class="kw-tag">화로 테이블</span><span class="kw-tag">높이조절 확장형 소파테이블</span><span class="kw-tag">회전식 멀티테이블</span><span class="kw-tag">드럼통 테이블</span><span class="kw-tag">벤치 테이블</span><span class="kw-tag">높이조절 식탁겸 책상</span><span class="kw-tag">리프트업 테이블</span><span class="kw-tag">높이조절 사이드 테이블</span><span class="kw-tag">중앙 전기 그릴 히터 테이블</span><span class="kw-tag">실내 사커테이블</span><span class="kw-tag">외발 리프트업 테이블</span></div>
     </td>
         <td>13</td>
@@ -374,8 +377,8 @@
         <td>22,780</td>
         <td style="color:#1a7f37;font-weight:700">+835%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">청소기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">청소기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">스팀 청소기</span><span class="kw-tag">고온 스팀 청소기</span><span class="kw-tag">자동세척 카펫청소기</span><span class="kw-tag">건조기 먼지 청소기</span><span class="kw-tag">자동세척 카펫 얼룩 제거기</span><span class="kw-tag">각도조절 창문청소기</span><span class="kw-tag">전동 청소기</span><span class="kw-tag">분무기 일체형 유리창 청소기</span><span class="kw-tag">자동 유리 청소 로봇</span><span class="kw-tag">자동 창문 청소 로봇</span></div>
     </td>
         <td>12</td>
@@ -395,8 +398,8 @@
         <td>11,191</td>
         <td style="color:#1a7f37;font-weight:700">+482%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">크림</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">크림</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">발 각질 제거 크림</span><span class="kw-tag">신발 세정 크림</span><span class="kw-tag">진정크림</span><span class="kw-tag">바세린</span><span class="kw-tag">화이트 태닝 크림</span><span class="kw-tag">푸크림</span><span class="kw-tag">피부과 추천 크림</span><span class="kw-tag">초코크림</span><span class="kw-tag">헤어크림</span></div>
     </td>
         <td>12</td>
@@ -416,8 +419,8 @@
         <td>4,359</td>
         <td style="color:#1a7f37;font-weight:700">+87%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">비누</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">비누</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">찌든 때 전용 빨랫비누</span><span class="kw-tag">일본 빨랫비누</span><span class="kw-tag">빨래 비누</span><span class="kw-tag">찌든 때 전용 비누</span><span class="kw-tag">세탁용 비누</span><span class="kw-tag">딸기 비누 만드는 키트</span><span class="kw-tag">코직산 미백비누</span><span class="kw-tag">도브 비누</span><span class="kw-tag">프랑스 천연 얼룩 제거 비누</span><span class="kw-tag">일본 교도소 파란비누</span><span class="kw-tag">향기 비누</span></div>
     </td>
         <td>11</td>
@@ -437,8 +440,8 @@
         <td>10,919</td>
         <td style="color:#1a7f37;font-weight:700">+425%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">양념</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">양념</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">김밥 밥 양념</span><span class="kw-tag">미역 양념/미역 조미료</span><span class="kw-tag">라면 양념/조미료</span><span class="kw-tag">양배추 찌는 양념/소스</span><span class="kw-tag">일본식 볶음밥 양념/소스</span><span class="kw-tag">계란말이 양념</span><span class="kw-tag">밥도둑 계란장</span><span class="kw-tag">김밥 양념</span><span class="kw-tag">일식 셰프 계란말이 양념</span><span class="kw-tag">라면 양념 시즈닝</span><span class="kw-tag">밥 양념</span></div>
     </td>
         <td>11</td>
@@ -458,8 +461,8 @@
         <td>1,616</td>
         <td style="color:#cf222e;font-weight:700">-43%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">자동차용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">자동차용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동차 도어 댐퍼</span><span class="kw-tag">차량 원격 시동 장치</span><span class="kw-tag">고주파 자동차 찌그러짐 복구기</span><span class="kw-tag">도어 댐퍼</span><span class="kw-tag">자동 사이드미러 내림 장치</span><span class="kw-tag">전자 교란 방식 자동차 성에 제거기</span><span class="kw-tag">스마트폰 차량 키 시스템</span><span class="kw-tag">배기구 튜닝 악세사리</span><span class="kw-tag">디지털키</span></div>
     </td>
         <td>11</td>
@@ -479,8 +482,8 @@
         <td>4,796</td>
         <td style="color:#1a7f37;font-weight:700">+61%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">청소용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">청소용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">분무기 스키지 창문청소기</span><span class="kw-tag">지문 방지 코팅 스프레이</span><span class="kw-tag">청소 코팅제</span><span class="kw-tag">물걸레</span><span class="kw-tag">다목적 청소 스프레이</span><span class="kw-tag">발동식 회전 밀대</span><span class="kw-tag">극세사 청소포</span><span class="kw-tag">욕실 타일 줄눈 펜</span><span class="kw-tag">초극세사 청소포</span><span class="kw-tag">세제스펀지 일체형 욕실청소용품</span><span class="kw-tag">물자국 제거 클리닝 천</span></div>
     </td>
         <td>11</td>
@@ -500,8 +503,8 @@
         <td>4,981</td>
         <td style="color:#1a7f37;font-weight:700">+155%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">타일</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">타일</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">헤링본 타일</span><span class="kw-tag">현관 타일</span><span class="kw-tag">액체 타일</span><span class="kw-tag">스톤 패턴 타일</span><span class="kw-tag">연결식 바닥 타일</span><span class="kw-tag">셀프시공 타일</span><span class="kw-tag">접착식 대리석 바닥 타일</span><span class="kw-tag">입체 타일</span><span class="kw-tag">접착제 없는 타일</span><span class="kw-tag">교체식 벽 타일</span></div>
     </td>
         <td>11</td>
@@ -518,8 +521,8 @@
         <td>5,132</td>
         <td style="color:#1a7f37;font-weight:700">+117%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">페인트</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">페인트</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">뜯기는 페인트</span><span class="kw-tag">창문 페인트</span><span class="kw-tag">타일용 페인트</span><span class="kw-tag">친환경 벽면 페인트</span><span class="kw-tag">타일 페인트</span><span class="kw-tag">욕실타일페인트</span><span class="kw-tag">자동차 페인트 수리용 분사식 컬러 복원제</span><span class="kw-tag">흘러내릴 수 있는 페인트</span><span class="kw-tag">욕실 페인트</span></div>
     </td>
         <td>11</td>
@@ -536,8 +539,8 @@
         <td>7,413</td>
         <td style="color:#1a7f37;font-weight:700">+254%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">펜</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">펜</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">빠른 건조 기능의 의료용 펜</span><span class="kw-tag">보석 펜</span><span class="kw-tag">젤펜</span><span class="kw-tag">소프트 그립 젤펜</span><span class="kw-tag">반짝이는 펜 (펄 컬러링 펜)</span><span class="kw-tag">의료용 볼펜</span><span class="kw-tag">8기능 멀티펜</span><span class="kw-tag">삼각그립 유성펜</span><span class="kw-tag">지우개 펜</span><span class="kw-tag">한다스 링크펜</span></div>
     </td>
         <td>11</td>
@@ -554,8 +557,8 @@
         <td>7,194</td>
         <td style="color:#1a7f37;font-weight:700">+32%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">가방</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">가방</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">보틀백</span><span class="kw-tag">미니 핸드백</span><span class="kw-tag">손뜨개 플라스틱 그물 가방</span><span class="kw-tag">헬로키티 가방</span><span class="kw-tag">스텐리 쿨러 가방</span><span class="kw-tag">명품 가방 디자인 에코백</span><span class="kw-tag">코치 디자이너 가방</span><span class="kw-tag">지방시 총괄 디자이너 협업 가방</span><span class="kw-tag">접이식 쇼핑백</span><span class="kw-tag">메이크업 가방</span></div>
     </td>
         <td>10</td>
@@ -575,8 +578,8 @@
         <td>7,694</td>
         <td style="color:#1a7f37;font-weight:700">+112%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">매트</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">매트</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">주방매트</span><span class="kw-tag">차량용 맞춤 방수 매트</span><span class="kw-tag">보온 단열 바닥재</span><span class="kw-tag">주방 매트</span><span class="kw-tag">L자형 투명 주방매트</span><span class="kw-tag">점프 매트</span><span class="kw-tag">다다미 모양 전기매트</span><span class="kw-tag">논슬립 주방매트</span><span class="kw-tag">차량용 에어매트</span><span class="kw-tag">주방바닥매트</span></div>
     </td>
         <td>10</td>
@@ -596,8 +599,8 @@
         <td>4,156</td>
         <td style="color:#1a7f37;font-weight:700">+35%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">수납용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">수납용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">욕실 수납장 선반 정리대</span><span class="kw-tag">길이조절 투명 수납박스</span><span class="kw-tag">수납랩</span><span class="kw-tag">슬라이딩 수납랩</span><span class="kw-tag">책장 문 패널</span><span class="kw-tag">주방용 연필꽂이</span><span class="kw-tag">모자 수납 고리</span><span class="kw-tag">접이식 수납박스</span><span class="kw-tag">투명 칸막이</span><span class="kw-tag">길이조절 수납걸이</span></div>
     </td>
         <td>10</td>
@@ -617,8 +620,8 @@
         <td>4,338</td>
         <td style="color:#1a7f37;font-weight:700">+8%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">책상</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">책상</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">접이식 원목 책상</span><span class="kw-tag">일체형 높이조절 책상</span><span class="kw-tag">원목 책상</span><span class="kw-tag">높이조절 멀티펑션 책상</span><span class="kw-tag">모션 데스크</span><span class="kw-tag">높이조절 1인 책상</span><span class="kw-tag">접이식 책상</span><span class="kw-tag">수납식 책상</span><span class="kw-tag">아이 책상</span><span class="kw-tag">벽부착 접이식 책상</span></div>
     </td>
         <td>10</td>
@@ -638,8 +641,8 @@
         <td>6,453</td>
         <td style="color:#1a7f37;font-weight:700">+120%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">클리너</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">클리너</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">욕실 줄눈 클리너</span><span class="kw-tag">유리/거울 코팅 클리너</span><span class="kw-tag">세탁기 클리너</span><span class="kw-tag">물자국 제거 유리 클리너</span><span class="kw-tag">욕실 클리너</span><span class="kw-tag">싱크대 상판 클리너</span><span class="kw-tag">인덕션 클리너</span><span class="kw-tag">자동차 실내 클리너</span><span class="kw-tag">싱크대 오염 제거용 분말 클리너</span></div>
     </td>
         <td>10</td>
@@ -656,8 +659,8 @@
         <td>17,045</td>
         <td style="color:#1a7f37;font-weight:700">+250%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">수납함</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">수납함</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">서랍식 서류 보관함</span><span class="kw-tag">공중부양형 가방 수납함</span><span class="kw-tag">원목 수납함</span><span class="kw-tag">슬림 휴지 보관함</span><span class="kw-tag">휴지 수납함</span><span class="kw-tag">서랍 정리용 수저/칼 수납함</span><span class="kw-tag">가죽 수납함 스툴</span><span class="kw-tag">화장품 수납 정리함</span><span class="kw-tag">길이조절 투명 수납함</span></div>
     </td>
         <td>9</td>
@@ -677,8 +680,8 @@
         <td>7,223</td>
         <td style="color:#1a7f37;font-weight:700">+143%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">운동기구</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">운동기구</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">서서 타는 운동기구</span><span class="kw-tag">철봉</span><span class="kw-tag">월바인</span><span class="kw-tag">진동 운동기구</span><span class="kw-tag">코어 운동기구</span><span class="kw-tag">전신 비틀림 운동기구</span><span class="kw-tag">밸런스 보드</span><span class="kw-tag">철봉/매달리기바</span></div>
     </td>
         <td>9</td>
@@ -695,8 +698,8 @@
         <td>4,865</td>
         <td style="color:#1a7f37;font-weight:700">+23%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">음료</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">음료</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">토마토 주스</span><span class="kw-tag">수제 탄산음료</span><span class="kw-tag">우베 음료</span><span class="kw-tag">마시멜로 토핑 음료</span><span class="kw-tag">토마토 농축액</span><span class="kw-tag">클라우드 라떼</span><span class="kw-tag">곰인형 증정 음료</span></div>
     </td>
         <td>9</td>
@@ -713,8 +716,8 @@
         <td>6,925</td>
         <td style="color:#1a7f37;font-weight:700">+398%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">네일</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">네일</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">네일 폴리시</span><span class="kw-tag">네일 빌더 베이스 코트</span><span class="kw-tag">젤네일</span><span class="kw-tag">자석네일펜</span><span class="kw-tag">셀프 네일 스티커</span><span class="kw-tag">산소투과 셀프 네일</span><span class="kw-tag">붙이는 네일</span></div>
     </td>
         <td>8</td>
@@ -734,8 +737,8 @@
         <td>5,331</td>
         <td style="color:#1a7f37;font-weight:700">+240%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">레시피</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">레시피</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">3가지 재료 팬케이크</span><span class="kw-tag">단백질 베이킹 레시피</span><span class="kw-tag">다이어트 요거트 케이크 레시피</span><span class="kw-tag">단백질 중심 다이어트 식단 레시피</span><span class="kw-tag">계란 바나나 우유 팬케이크</span><span class="kw-tag">디저트 레시피</span><span class="kw-tag">베이킹 레시피</span><span class="kw-tag">사과 디저트 레시피</span></div>
     </td>
         <td>8</td>
@@ -755,8 +758,8 @@
         <td>66,015</td>
         <td style="color:#1a7f37;font-weight:700">+2604%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">빵</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">빵</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">쫀득빵</span><span class="kw-tag">단백질빵</span><span class="kw-tag">밀가루 설탕 없는 쫀득빵</span><span class="kw-tag">바삭크림빵</span><span class="kw-tag">사과 설기</span><span class="kw-tag">치즈빵</span><span class="kw-tag">밥솥 빵</span><span class="kw-tag">밀가루 없는 치즈 빵</span></div>
     </td>
         <td>8</td>
@@ -773,8 +776,8 @@
         <td>3,672</td>
         <td style="color:#1a7f37;font-weight:700">+26%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">신발</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">신발</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">키즈 어그</span><span class="kw-tag">나이키 리커버리 슈즈</span><span class="kw-tag">아디다스 클라이마쿨 스니커즈</span><span class="kw-tag">나이키 에어쿠션 운동화</span><span class="kw-tag">5cm 굽 스프링 신발</span><span class="kw-tag">아디다스 겨울 스웨이드 양털 신발</span><span class="kw-tag">양말 붙은 아동 슬립온 신발</span><span class="kw-tag">신경과 기반 설계 지압돌기 신발</span></div>
     </td>
         <td>8</td>
@@ -794,8 +797,8 @@
         <td>6,220</td>
         <td style="color:#1a7f37;font-weight:700">+103%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">조명</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">조명</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">크리스마스 프로젝션 조명</span><span class="kw-tag">센서감지 간접등</span><span class="kw-tag">AI 조명 동기화 시스템</span><span class="kw-tag">LED 스트립 조명</span><span class="kw-tag">그리기식 무드등</span><span class="kw-tag">모션감지 LED 간접등</span><span class="kw-tag">앰비언트 라이트</span><span class="kw-tag">스카이라이트 조명</span></div>
     </td>
         <td>8</td>
@@ -815,8 +818,8 @@
         <td>4,643</td>
         <td style="color:#1a7f37;font-weight:700">+265%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">주방용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">주방용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 마늘 껍질 벗기기 기계</span><span class="kw-tag">계란 껍질 제거기</span><span class="kw-tag">면 제조기</span><span class="kw-tag">자석 싱크대 물기제거기</span><span class="kw-tag">마늘 채소 다지기</span><span class="kw-tag">버터 메이커</span><span class="kw-tag">행주</span><span class="kw-tag">가루 소분용 스쿱</span></div>
     </td>
         <td>8</td>
@@ -833,8 +836,8 @@
         <td>1,735</td>
         <td style="color:#1a7f37;font-weight:700">+10%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">케이크</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">케이크</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">초코 브라우니 스펀지 케이크</span><span class="kw-tag">생초코 가나슈 케이크</span><span class="kw-tag">단백질 수플레 케이크</span><span class="kw-tag">노오븐 요거트 케이크</span><span class="kw-tag">설탕과 밀가루 없는 사과 케이크</span><span class="kw-tag">생딸기 생크림 케이크</span><span class="kw-tag">바나나 케이크</span><span class="kw-tag">롤케이크</span></div>
     </td>
         <td>8</td>
@@ -854,8 +857,8 @@
         <td>13,172</td>
         <td style="color:#1a7f37;font-weight:700">+355%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">트롤리</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">트롤리</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">책상 정리 트롤리</span><span class="kw-tag">접이식 트롤리</span><span class="kw-tag">메탈우드 바퀴달린 분리형 트롤리</span><span class="kw-tag">바퀴 달린 수납 트롤리</span><span class="kw-tag">층별 정리 수납 트롤리</span><span class="kw-tag">수납 트롤리</span><span class="kw-tag">높이조절 트롤리</span></div>
     </td>
         <td>8</td>
@@ -875,8 +878,8 @@
         <td>3,971</td>
         <td style="color:#1a7f37;font-weight:700">+29%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">프린터</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">프린터</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">휴대용 핸드마킹 프린터</span><span class="kw-tag">3D 벽 프린트 기계</span><span class="kw-tag">휴대폰 연결 사진 출력기</span><span class="kw-tag">스티커 프린터</span><span class="kw-tag">휴대용 프린터</span><span class="kw-tag">UV 프린터</span><span class="kw-tag">실사 피규어 3D 프린터</span><span class="kw-tag">커스텀 티셔츠 프린터</span></div>
     </td>
         <td>8</td>
@@ -896,8 +899,8 @@
         <td>5,170</td>
         <td style="color:#1a7f37;font-weight:700">+111%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">마스카라</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">마스카라</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">워터프루프 마스카라</span><span class="kw-tag">매스카라</span><span class="kw-tag">메탈 브러쉬 마스카라</span><span class="kw-tag">스틸 나선형 브러쉬 마스카라</span><span class="kw-tag">속눈썹 연장 마스카라</span></div>
     </td>
         <td>7</td>
@@ -914,8 +917,8 @@
         <td>4,448</td>
         <td style="color:#1a7f37;font-weight:700">+29%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">벽지</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">벽지</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">국산 벽지 보건도</span><span class="kw-tag">나뭇갤 벽질 스티커</span><span class="kw-tag">스티커 벽지</span><span class="kw-tag">국산 보건도</span><span class="kw-tag">무점착 벽지</span><span class="kw-tag">액체 벽지</span></div>
     </td>
         <td>7</td>
@@ -932,8 +935,8 @@
         <td>2,897</td>
         <td style="color:#1a7f37;font-weight:700">+8%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">세정제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">세정제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">다목적 세정제</span><span class="kw-tag">욕실 세정제</span><span class="kw-tag">가루 세정제</span><span class="kw-tag">기름때 세정제</span><span class="kw-tag">욕실용 강력 세정제</span></div>
     </td>
         <td>7</td>
@@ -950,8 +953,8 @@
         <td>2,332</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">세탁기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">세탁기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">초소형 미니 세탁기</span><span class="kw-tag">방수 미니 세탁기</span><span class="kw-tag">소형 세탁기</span><span class="kw-tag">미니 세탁기</span><span class="kw-tag">방수 미니세탁기</span><span class="kw-tag">미니 통돌이 세탁기</span></div>
     </td>
         <td>7</td>
@@ -971,8 +974,8 @@
         <td>43,740</td>
         <td style="color:#1a7f37;font-weight:700">+1009%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">소파</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">소파</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">인형 수납 빈백 소파</span><span class="kw-tag">원목 소파</span><span class="kw-tag">고양이 소파</span><span class="kw-tag">리모컨식 멀티 소파베드</span><span class="kw-tag">접이식 소파 침대</span><span class="kw-tag">모듈식 컵홀더 소파</span><span class="kw-tag">다기능 접이식 소파</span></div>
     </td>
         <td>7</td>
@@ -989,8 +992,8 @@
         <td>1,527</td>
         <td style="color:#cf222e;font-weight:700">-9%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">스티커</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">스티커</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">커스텀 방수 스티커</span><span class="kw-tag">제품 스티커</span><span class="kw-tag">타일 스티커</span><span class="kw-tag">보석 스티커</span><span class="kw-tag">에어리 스티커</span><span class="kw-tag">금속 자동차 스티커</span><span class="kw-tag">이름 스티커 및 띠 인쇄 제품</span></div>
     </td>
         <td>7</td>
@@ -1010,8 +1013,8 @@
         <td>4,157</td>
         <td style="color:#1a7f37;font-weight:700">+26%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">시트지</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">시트지</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">정전기 흡착 시트지</span><span class="kw-tag">키 기록 시트지</span><span class="kw-tag">방수 인테리어 시트지</span><span class="kw-tag">자석 시트지</span><span class="kw-tag">주방 자석 시트지</span><span class="kw-tag">창문 사생활 보호 시트지</span></div>
     </td>
         <td>7</td>
@@ -1031,8 +1034,8 @@
         <td>15,039</td>
         <td style="color:#1a7f37;font-weight:700">+109%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">용기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">용기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">일회용 간식 보관용기</span><span class="kw-tag">냉장고 음료수 보관용기</span><span class="kw-tag">샐러드 용기</span><span class="kw-tag">밀폐 용기</span><span class="kw-tag">마늘 보관용 용기</span><span class="kw-tag">플라워 캔시머</span><span class="kw-tag">푸시업 음식 용기</span></div>
     </td>
         <td>7</td>
@@ -1049,8 +1052,8 @@
         <td>7,319</td>
         <td style="color:#1a7f37;font-weight:700">+313%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">음식</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">음식</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">김밥</span><span class="kw-tag">잡채</span><span class="kw-tag">감자전</span><span class="kw-tag">비빔국수</span></div>
     </td>
         <td>7</td>
@@ -1070,8 +1073,8 @@
         <td>1,891</td>
         <td style="color:#cf222e;font-weight:700">-63%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">커튼</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">커튼</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">슬라이딩 커튼</span><span class="kw-tag">자동 롤 커튼</span><span class="kw-tag">롤스크린</span><span class="kw-tag">차량용 레일 커튼</span><span class="kw-tag">패널 커튼</span><span class="kw-tag">1분 설치 블라인드 커튼</span></div>
     </td>
         <td>7</td>
@@ -1088,8 +1091,8 @@
         <td>3,769</td>
         <td style="color:#1a7f37;font-weight:700">+5%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">거치대</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">거치대</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">회전식 태블릿 거치대</span><span class="kw-tag">맥세이프 멀티 거치대</span><span class="kw-tag">리본 장식 주걱 거치대</span><span class="kw-tag">차량용 태블릿 거치대</span><span class="kw-tag">드라이기 장갑 건조 거치대</span><span class="kw-tag">길이조절 칸막이 거치대</span></div>
     </td>
         <td>6</td>
@@ -1109,8 +1112,8 @@
         <td>6,027</td>
         <td style="color:#1a7f37;font-weight:700">+189%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">디스플레이</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">디스플레이</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">디지털 사이니지 스크린</span><span class="kw-tag">듀얼 디스플레이 안드로이드 오토</span><span class="kw-tag">LED 스크린 시트</span><span class="kw-tag">롤링 LED 스크린</span><span class="kw-tag">헤드업 디스플레이</span><span class="kw-tag">자동차 피규어 디스플레이 케이스</span></div>
     </td>
         <td>6</td>
@@ -1127,8 +1130,8 @@
         <td>4,301</td>
         <td style="color:#1a7f37;font-weight:700">+45%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">립스틱</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">립스틱</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">바세린 립스틱</span><span class="kw-tag">틴트 립스틱</span><span class="kw-tag">헤라 립스틱</span><span class="kw-tag">맥 립스틱</span><span class="kw-tag">올리브영 1등 립</span><span class="kw-tag">립스틱</span></div>
     </td>
         <td>6</td>
@@ -1145,8 +1148,8 @@
         <td>4,364</td>
         <td style="color:#1a7f37;font-weight:700">+91%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">세척제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">세척제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">과일 세척제</span><span class="kw-tag">딸기 세척제</span><span class="kw-tag">브로콜리 세척제</span></div>
     </td>
         <td>6</td>
@@ -1166,8 +1169,8 @@
         <td>8,983</td>
         <td style="color:#1a7f37;font-weight:700">+104%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">식물</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">식물</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">실내 관엽식물</span><span class="kw-tag">힐링나무</span><span class="kw-tag">호야</span><span class="kw-tag">하트잎 식물</span><span class="kw-tag">탕후루나무</span><span class="kw-tag">행복을 주는 다육식물</span></div>
     </td>
         <td>6</td>
@@ -1184,8 +1187,8 @@
         <td>2,948</td>
         <td style="color:#1a7f37;font-weight:700">+9%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">옷걸이</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">옷걸이</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">추가 옷걸이 공</span><span class="kw-tag">360도 회전 의자 옷걸이</span><span class="kw-tag">2단 지그재그 옷걸이</span><span class="kw-tag">그네 옷걸이</span><span class="kw-tag">자동 주름펴기 옷걸이</span><span class="kw-tag">회전식 옷걸이</span></div>
     </td>
         <td>6</td>
@@ -1202,8 +1205,8 @@
         <td>1,586</td>
         <td style="color:#1a7f37;font-weight:700">+4%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">테이프</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">테이프</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">옷 태그 보호 테이프</span><span class="kw-tag">무자국 접착 테이프</span><span class="kw-tag">무자국 강력 접착테이프</span><span class="kw-tag">투명 재사용 접착 테이프</span><span class="kw-tag">쌍꺼풀 테이프</span><span class="kw-tag">바지 수선 테이프</span></div>
     </td>
         <td>6</td>
@@ -1220,8 +1223,8 @@
         <td>3,203</td>
         <td style="color:#1a7f37;font-weight:700">+60%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">파운데이션</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">파운데이션</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">파운데이션</span><span class="kw-tag">쿠션 파운데이션</span><span class="kw-tag">쿠션파운데이션</span><span class="kw-tag">쿠팡 1등 파데</span><span class="kw-tag">이밀착 파데</span></div>
     </td>
         <td>6</td>
@@ -1238,8 +1241,8 @@
         <td>10,698</td>
         <td style="color:#1a7f37;font-weight:700">+165%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">행거</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">행거</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">멀티 행거</span><span class="kw-tag">접이식 행거</span><span class="kw-tag">슬림 행거</span><span class="kw-tag">바퀴달린 거울 행거</span><span class="kw-tag">무소음 댐퍼 로프트 행거</span><span class="kw-tag">분해식 페그보드 시스템 행거</span></div>
     </td>
         <td>6</td>
@@ -1259,8 +1262,8 @@
         <td>6,731</td>
         <td style="color:#1a7f37;font-weight:700">+134%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">화장품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">화장품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">프라이머</span><span class="kw-tag">눈썹 염색 화장품</span><span class="kw-tag">기미 잡티 개선 화장품</span><span class="kw-tag">컨실러</span><span class="kw-tag">하이라이터</span></div>
     </td>
         <td>6</td>
@@ -1277,8 +1280,8 @@
         <td>2,095</td>
         <td style="color:#cf222e;font-weight:700">-24%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">공예용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">공예용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">DIY 수지 공예 키트</span><span class="kw-tag">페인트 돌 만들기 키트</span><span class="kw-tag">페인팅 스톤 세트</span><span class="kw-tag">다이아몬드 페인팅</span><span class="kw-tag">DIY 레진 공예 키트</span></div>
     </td>
         <td>5</td>
@@ -1295,8 +1298,8 @@
         <td>3,526</td>
         <td style="color:#1a7f37;font-weight:700">+97%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">다리미</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">다리미</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">의류 프린트 복구 다리미</span><span class="kw-tag">스팀 다리미</span><span class="kw-tag">휴대용 미니 다리미</span><span class="kw-tag">다이슨 스팀 다리미</span></div>
     </td>
         <td>5</td>
@@ -1316,8 +1319,8 @@
         <td>9,012</td>
         <td style="color:#1a7f37;font-weight:700">+176%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">바나나</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">바나나</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">사과 바나나</span><span class="kw-tag">프리미엄 바나나</span><span class="kw-tag">프리미엄 필리핀 바나나</span><span class="kw-tag">사과 맛 바나나</span><span class="kw-tag">냉동 바나나</span></div>
     </td>
         <td>5</td>
@@ -1334,8 +1337,8 @@
         <td>4,064</td>
         <td style="color:#1a7f37;font-weight:700">+218%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">속눈썹</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">속눈썹</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">노글루 속눈썹</span><span class="kw-tag">독일 원사 속눈썹 (쪽집게 포함, 240모 대용량)</span><span class="kw-tag">언더 속눈썹 (초극세모)</span><span class="kw-tag">글루 없는 속눈썹</span><span class="kw-tag">글루 없는 속눈썹 연장</span></div>
     </td>
         <td>5</td>
@@ -1352,8 +1355,8 @@
         <td>1,520</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">식탁</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">식탁</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">길이조절식 아일랜드 식탁</span><span class="kw-tag">확장형 식탁</span><span class="kw-tag">수납 식탁</span><span class="kw-tag">다기능 변형 식탁</span><span class="kw-tag">회전식 다용도 식탁</span></div>
     </td>
         <td>5</td>
@@ -1370,8 +1373,8 @@
         <td>4,686</td>
         <td style="color:#1a7f37;font-weight:700">+31%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">아이스크림</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">아이스크림</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">쌀아이스크림 믹스</span><span class="kw-tag">키 성장 아이스크림</span><span class="kw-tag">초콜릿 아이스크림 메이커</span><span class="kw-tag">쌀 아이스크림</span><span class="kw-tag">저설탕 아이스크림</span></div>
     </td>
         <td>5</td>
@@ -1391,8 +1394,8 @@
         <td>6,819</td>
         <td style="color:#1a7f37;font-weight:700">+91%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">영양제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">영양제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">대파 재배용 영양제</span><span class="kw-tag">속눈썹 영양제 고농축 세럼</span><span class="kw-tag">대파 빨리 자라게 하는 영양제</span><span class="kw-tag">대파 수경재배 영양제</span></div>
     </td>
         <td>5</td>
@@ -1412,8 +1415,8 @@
         <td>6,624</td>
         <td style="color:#1a7f37;font-weight:700">+54%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">의자</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">의자</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">높이조절 메쉬 의자</span><span class="kw-tag">게이밍 의자</span><span class="kw-tag">척추견인 의자</span><span class="kw-tag">높이조절 아동 학습의자</span><span class="kw-tag">높이조절 학생용 의자</span></div>
     </td>
         <td>5</td>
@@ -1433,8 +1436,8 @@
         <td>9,795</td>
         <td style="color:#1a7f37;font-weight:700">+291%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">지우개</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">지우개</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">펜슬형 수학 지우개 6개 세트</span><span class="kw-tag">펜형 지우개</span><span class="kw-tag">열감지 지우개</span><span class="kw-tag">부즈부담 떼밀이 지우개</span><span class="kw-tag">슬라이더 지우개</span></div>
     </td>
         <td>5</td>
@@ -1454,8 +1457,8 @@
         <td>8,005</td>
         <td style="color:#1a7f37;font-weight:700">+295%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">케이스</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">케이스</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">차량 스마트키 케이스</span><span class="kw-tag">커스텀 핸드폰 케이스</span><span class="kw-tag">휴대폰 케이스</span><span class="kw-tag">물리 셔터 버튼 다이얼 카메라 케이스</span><span class="kw-tag">사진 인쇄 휴대폰 케이스</span></div>
     </td>
         <td>5</td>
@@ -1472,8 +1475,8 @@
         <td>6,673</td>
         <td style="color:#1a7f37;font-weight:700">+130%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">텐트</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">텐트</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">동굴 텐트</span><span class="kw-tag">방수 접이식 차량용 주차 텐트</span><span class="kw-tag">냥이 전용 동굴 텐트</span><span class="kw-tag">우산 텐트</span><span class="kw-tag">자동펼침 루프탑 텐트</span></div>
     </td>
         <td>5</td>
@@ -1493,8 +1496,8 @@
         <td>7,031</td>
         <td style="color:#1a7f37;font-weight:700">+40%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">티슈</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">티슈</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동차 유리 전용 티슈</span><span class="kw-tag">차량용 광택 티슈</span><span class="kw-tag">초극세사 물티슈</span><span class="kw-tag">신발 얼룩 제거 티슈</span><span class="kw-tag">패딩 티슈</span></div>
     </td>
         <td>5</td>
@@ -1514,8 +1517,8 @@
         <td>3,825</td>
         <td style="color:#1a7f37;font-weight:700">+29%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">헤어케어</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">헤어케어</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">흰머리 관리 루틴</span><span class="kw-tag">헤어 에센스/트리트먼트</span><span class="kw-tag">머리숱 관리 제품</span><span class="kw-tag">헤어 관리 제품</span><span class="kw-tag">헤어 케어 에센스/팩</span></div>
     </td>
         <td>5</td>
@@ -1532,8 +1535,8 @@
         <td>5,147</td>
         <td style="color:#1a7f37;font-weight:700">+4%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">TV</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">TV</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">포터블TV</span><span class="kw-tag">이동식 TV</span><span class="kw-tag">120인치 4K LED 액정 TV</span><span class="kw-tag">분리형 터치스크린 TV</span></div>
     </td>
         <td>4</td>
@@ -1550,8 +1553,8 @@
         <td>2,270</td>
         <td style="color:#1a7f37;font-weight:700">+36%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">과일</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">과일</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">유기농 블루베리</span><span class="kw-tag">농장 복숭아</span><span class="kw-tag">프리미엄 복숭아</span><span class="kw-tag">블루베리</span></div>
     </td>
         <td>4</td>
@@ -1571,8 +1574,8 @@
         <td>4,681</td>
         <td style="color:#1a7f37;font-weight:700">+89%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">미백제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">미백제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">미백 연구</span><span class="kw-tag">치아미백 스트립</span><span class="kw-tag">치아 미백 스트립</span><span class="kw-tag">치아 미백 페인트</span></div>
     </td>
         <td>4</td>
@@ -1592,8 +1595,8 @@
         <td>5,052</td>
         <td style="color:#1a7f37;font-weight:700">+64%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">볼펜</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">볼펜</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">일본 볼펜</span><span class="kw-tag">필압 조절 볼펜</span><span class="kw-tag">독일 볼펜</span><span class="kw-tag">독일 볼펜 10개 세트</span></div>
     </td>
         <td>4</td>
@@ -1610,8 +1613,8 @@
         <td>2,443</td>
         <td style="color:#cf222e;font-weight:700">-9%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">선풍기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">선풍기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">날개 없는 선풍기</span><span class="kw-tag">소형 선풍기</span><span class="kw-tag">회전식 접이식 선풍기</span><span class="kw-tag">꽃풍기</span></div>
     </td>
         <td>4</td>
@@ -1631,8 +1634,8 @@
         <td>10,955</td>
         <td style="color:#1a7f37;font-weight:700">+45%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">세럼</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">세럼</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">헤어 복구 세럼</span><span class="kw-tag">치아미백세럼</span><span class="kw-tag">헤어 세럼</span><span class="kw-tag">기미 개선 세럼</span></div>
     </td>
         <td>4</td>
@@ -1649,8 +1652,8 @@
         <td>3,728</td>
         <td style="color:#1a7f37;font-weight:700">+13%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">수리용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">수리용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">타일 균열 수리용 충전제</span><span class="kw-tag">타일 균열 수리 크림</span><span class="kw-tag">우드 크레파스</span><span class="kw-tag">크레파스형 바닥 수리용품</span></div>
     </td>
         <td>4</td>
@@ -1667,8 +1670,8 @@
         <td>4,648</td>
         <td style="color:#1a7f37;font-weight:700">+72%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">스프레이</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">스프레이</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">주름제거 스프레이</span><span class="kw-tag">라카 스프레이</span><span class="kw-tag">헤어 스프레이</span><span class="kw-tag">차량용 광택 복원 스프레이</span></div>
     </td>
         <td>4</td>
@@ -1688,8 +1691,8 @@
         <td>1,936</td>
         <td style="color:#1a7f37;font-weight:700">+31%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">식품첨가제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">식품첨가제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">쌀 영양제</span><span class="kw-tag">밥 코팅용 첨가제</span><span class="kw-tag">밥 첨가제</span></div>
     </td>
         <td>4</td>
@@ -1709,8 +1712,8 @@
         <td>24,547</td>
         <td style="color:#1a7f37;font-weight:700">+403%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">썬쉐이드</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">썬쉐이드</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 펼침 차량 썬쉐이드</span><span class="kw-tag">흡착식 햇빛 가리개</span><span class="kw-tag">자동 올림 차량용 창문 썬쉐이드</span><span class="kw-tag">차량용 햇빛가리개</span></div>
     </td>
         <td>4</td>
@@ -1730,8 +1733,8 @@
         <td>5,323</td>
         <td style="color:#1a7f37;font-weight:700">+59%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">염색제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">염색제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">버블 염색제</span><span class="kw-tag">프리미엄 살롱라인 헤어염색제</span><span class="kw-tag">이태리 헤어살롱 셀프 염색제</span><span class="kw-tag">샴푸형 헤어 염색제</span></div>
     </td>
         <td>4</td>
@@ -1748,8 +1751,8 @@
         <td>1,646</td>
         <td style="color:#1a7f37;font-weight:700">+5%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">우산</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">우산</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 개폐 우산</span><span class="kw-tag">차량용 우산 고정 클립</span><span class="kw-tag">선풍기 달린 우산</span><span class="kw-tag">자석 우산 홀더</span></div>
     </td>
         <td>4</td>
@@ -1769,8 +1772,8 @@
         <td>2,174</td>
         <td style="color:#1a7f37;font-weight:700">+11%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">운동화</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">운동화</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">뉴발 키즈 운동화</span><span class="kw-tag">나이키 스니커즈</span><span class="kw-tag">어그 겨울 운동화</span><span class="kw-tag">나이키 리커버리 슈즈</span></div>
     </td>
         <td>4</td>
@@ -1790,8 +1793,8 @@
         <td>10,870</td>
         <td style="color:#1a7f37;font-weight:700">+104%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">정리함</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">정리함</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">15칸 서랍 책상 정리함</span><span class="kw-tag">상부장 정리함</span><span class="kw-tag">흡착식 세면대 정리함</span><span class="kw-tag">서류 정리함</span></div>
     </td>
         <td>4</td>
@@ -1811,8 +1814,8 @@
         <td>4,244</td>
         <td style="color:#1a7f37;font-weight:700">+161%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">착즙기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">착즙기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 착즙기</span><span class="kw-tag">오렌지 자동 착즙 기계</span><span class="kw-tag">스테인리스 과일 착즙기</span></div>
     </td>
         <td>4</td>
@@ -1832,8 +1835,8 @@
         <td>4,223</td>
         <td style="color:#1a7f37;font-weight:700">+17%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">카트</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">카트</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">전동 외건</span><span class="kw-tag">다기능 접이식 수납카트</span><span class="kw-tag">층별 수납 바퀴 카트</span><span class="kw-tag">버비시 카트</span></div>
     </td>
         <td>4</td>
@@ -1850,8 +1853,8 @@
         <td>2,942</td>
         <td style="color:#1a7f37;font-weight:700">+40%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">커버</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">커버</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">인덕션 고무줄 커버</span><span class="kw-tag">소파커버</span><span class="kw-tag">신발 방수 커버</span><span class="kw-tag">배수구 커버</span></div>
     </td>
         <td>4</td>
@@ -1871,8 +1874,8 @@
         <td>2,295</td>
         <td style="color:#1a7f37;font-weight:700">+1%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">팩</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">팩</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">알로에 쿨링팩</span><span class="kw-tag">대나무 수성분 블랙헤드 제거 팩</span><span class="kw-tag">발 각질 제거 팩</span><span class="kw-tag">코팩</span></div>
     </td>
         <td>4</td>
@@ -1892,8 +1895,8 @@
         <td>1,673</td>
         <td style="color:#1a7f37;font-weight:700">+19%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">가루</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">가루</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">부침개 반죽용 가루</span><span class="kw-tag">옥수수 전분</span><span class="kw-tag">부침가루</span></div>
     </td>
         <td>3</td>
@@ -1913,8 +1916,8 @@
         <td>6,384</td>
         <td style="color:#1a7f37;font-weight:700">+323%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">거울</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">거울</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">인스타 거울</span><span class="kw-tag">운동 영상 거울</span><span class="kw-tag">수납 바구니 달린 전신거울</span></div>
     </td>
         <td>3</td>
@@ -1934,8 +1937,8 @@
         <td>14,119</td>
         <td style="color:#1a7f37;font-weight:700">+450%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">건조대</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">건조대</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">무타공 벽면 접이식 빨래건조대</span><span class="kw-tag">접이식 전기건조대</span><span class="kw-tag">벽부착 접이식 빨래건조대</span></div>
     </td>
         <td>3</td>
@@ -1955,8 +1958,8 @@
         <td>3,286</td>
         <td style="color:#1a7f37;font-weight:700">+34%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">공구</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">공구</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">마스킹 도구</span><span class="kw-tag">스크래퍼</span><span class="kw-tag">실리콘 시공 도구</span></div>
     </td>
         <td>3</td>
@@ -1973,8 +1976,8 @@
         <td>1,642</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">꽃관리용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">꽃관리용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">꽃 보존제</span><span class="kw-tag">꽃 신선도 유지제</span><span class="kw-tag">꽃 생화 보존제</span></div>
     </td>
         <td>3</td>
@@ -1991,8 +1994,8 @@
         <td>1,515</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">네일용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">네일용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">큐티클 리무버</span><span class="kw-tag">큐티클 제거제</span><span class="kw-tag">네일아트펜</span></div>
     </td>
         <td>3</td>
@@ -2009,8 +2012,8 @@
         <td>2,371</td>
         <td style="color:#1a7f37;font-weight:700">+20%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">도어</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">도어</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">구멍 없는 슬라이딩 도어</span><span class="kw-tag">무타공 슬라이딩 도어</span><span class="kw-tag">슬라이딩 도어</span></div>
     </td>
         <td>3</td>
@@ -2027,8 +2030,8 @@
         <td>10,430</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">디스펜서</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">디스펜서</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">빵 디스펜서</span><span class="kw-tag">오일 디스펜서</span><span class="kw-tag">펌프 디스펜서</span></div>
     </td>
         <td>3</td>
@@ -2045,8 +2048,8 @@
         <td>1,023</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">랩</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">랩</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">천연 랩</span><span class="kw-tag">천연 밀랍 랩</span><span class="kw-tag">천연랩</span></div>
     </td>
         <td>3</td>
@@ -2066,8 +2069,8 @@
         <td>6,789</td>
         <td style="color:#1a7f37;font-weight:700">+475%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">마커</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">마커</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">아크릴 마커</span><span class="kw-tag">전문가용 마커</span></div>
     </td>
         <td>3</td>
@@ -2087,8 +2090,8 @@
         <td>6,640</td>
         <td style="color:#1a7f37;font-weight:700">+388%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">멀티탭</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">멀티탭</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">회전용 멀티탭</span><span class="kw-tag">회전식 멀티탭</span><span class="kw-tag">납작한 멀티탭</span></div>
     </td>
         <td>3</td>
@@ -2108,8 +2111,8 @@
         <td>1,533</td>
         <td style="color:#1a7f37;font-weight:700">+6%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">물감</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">물감</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">메탈 고체 수채화 물감</span><span class="kw-tag">진주 물감</span><span class="kw-tag">글리터 물감 세트</span></div>
     </td>
         <td>3</td>
@@ -2126,8 +2129,8 @@
         <td>2,599</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">미술용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">미술용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">색연필</span><span class="kw-tag">DIY 스크래치 아트</span></div>
     </td>
         <td>3</td>
@@ -2144,8 +2147,8 @@
         <td>2,577</td>
         <td style="color:#1a7f37;font-weight:700">+94%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">바구니</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">바구니</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">길이조절 투명 수납바구니</span><span class="kw-tag">주석 호부제</span></div>
     </td>
         <td>3</td>
@@ -2165,8 +2168,8 @@
         <td>11,810</td>
         <td style="color:#1a7f37;font-weight:700">+147%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">바닥재</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">바닥재</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">방수 바닥재</span><span class="kw-tag">바닥 보수용 충전재</span><span class="kw-tag">액체 타일</span></div>
     </td>
         <td>3</td>
@@ -2186,8 +2189,8 @@
         <td>2,984</td>
         <td style="color:#1a7f37;font-weight:700">+54%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">바디워시</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">바디워시</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">미국산 센시티브 바디워시</span><span class="kw-tag">화이트닝 바디워시</span><span class="kw-tag">화이트닝 바디 워시</span></div>
     </td>
         <td>3</td>
@@ -2207,8 +2210,8 @@
         <td>10,937</td>
         <td style="color:#1a7f37;font-weight:700">+122%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">밥솥</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">밥솥</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">밥솥 레시피/밥솥 간식</span><span class="kw-tag">도자기솥밥</span><span class="kw-tag">밥솥</span></div>
     </td>
         <td>3</td>
@@ -2225,8 +2228,8 @@
         <td>9,232</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">방수재</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">방수재</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">방수 코팅제</span></div>
     </td>
         <td>3</td>
@@ -2246,8 +2249,8 @@
         <td>6,503</td>
         <td style="color:#1a7f37;font-weight:700">+35%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">변기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">변기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 청소 변기</span><span class="kw-tag">자동 개폐 및 자동 청소 기능이 있는 스마트 변기</span><span class="kw-tag">스마트 변기</span></div>
     </td>
         <td>3</td>
@@ -2264,8 +2267,8 @@
         <td>4,211</td>
         <td style="color:#1a7f37;font-weight:700">+222%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">보관용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">보관용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">천연 식품 보관용 랩</span><span class="kw-tag">감자 보관용 분말/파우더</span><span class="kw-tag">양파 보관용 용기/보관제</span></div>
     </td>
         <td>3</td>
@@ -2282,8 +2285,8 @@
         <td>5,064</td>
         <td style="color:#1a7f37;font-weight:700">+199%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">브러쉬</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">브러쉬</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">구부러지는 선풍기 청소 브러쉬</span><span class="kw-tag">텀블러 브러쉬</span><span class="kw-tag">세 가지 브러쉬 일체형 텀블러 세척 브러쉬</span></div>
     </td>
         <td>3</td>
@@ -2303,8 +2306,8 @@
         <td>5,471</td>
         <td style="color:#1a7f37;font-weight:700">+223%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">샤프</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">샤프</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 심 샤프 펜</span><span class="kw-tag">자동 샤프 (쿠루토가 엔진 기술)</span></div>
     </td>
         <td>3</td>
@@ -2321,8 +2324,8 @@
         <td>8,978</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">서랍장</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">서랍장</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">원목 일체형 레일 사이드 서랍장</span><span class="kw-tag">세탁기 위 일체형 세면대 서랍장</span><span class="kw-tag">철제 서랍장</span></div>
     </td>
         <td>3</td>
@@ -2339,8 +2342,8 @@
         <td>3,746</td>
         <td style="color:#1a7f37;font-weight:700">+43%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">세척기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">세척기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">전동 불판 세척기</span><span class="kw-tag">고압세척기</span><span class="kw-tag">초음파 세척기</span></div>
     </td>
         <td>3</td>
@@ -2357,8 +2360,8 @@
         <td>7,202</td>
         <td style="color:#1a7f37;font-weight:700">+11%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">소스</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">소스</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">비밀 간장 소스</span><span class="kw-tag">감자 시금치 과자 만드는 소스</span><span class="kw-tag">일본 마법소스</span></div>
     </td>
         <td>3</td>
@@ -2375,8 +2378,8 @@
         <td>1,824</td>
         <td style="color:#1a7f37;font-weight:700">+61%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">스킨케어</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">스킨케어</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">피부 관리 제품</span><span class="kw-tag">다세린</span><span class="kw-tag">7가지 스킨케어 알약 세트</span></div>
     </td>
         <td>3</td>
@@ -2393,8 +2396,8 @@
         <td>3,813</td>
         <td style="color:#1a7f37;font-weight:700">+10%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">슬라이서</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">슬라이서</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">채 썰기 슬라이서</span><span class="kw-tag">생고기 슬라이서</span></div>
     </td>
         <td>3</td>
@@ -2411,8 +2414,8 @@
         <td>5,373</td>
         <td style="color:#1a7f37;font-weight:700">+261%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">식재료</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">식재료</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">복스란</span><span class="kw-tag">계란말이 조리 비결 재료</span><span class="kw-tag">홈메이드 아이스크림 제조 재료</span></div>
     </td>
         <td>3</td>
@@ -2429,8 +2432,8 @@
         <td>2,965</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">신발용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">신발용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">신발 방한 미끄럼방지 장치</span><span class="kw-tag">신발 방수 커버</span><span class="kw-tag">신발 미끄럼방지 밴드</span></div>
     </td>
         <td>3</td>
@@ -2447,8 +2450,8 @@
         <td>4,284</td>
         <td style="color:#1a7f37;font-weight:700">+30%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">쓰레기통</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">쓰레기통</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">자동 뚜껑 개폐 쓰레기통</span><span class="kw-tag">자동 센서 쓰레기통</span><span class="kw-tag">음식물쓰레기 버튼식 배출함</span></div>
     </td>
         <td>3</td>
@@ -2465,8 +2468,8 @@
         <td>4,991</td>
         <td style="color:#1a7f37;font-weight:700">+75%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">아이섀도우</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">아이섀도우</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">섀도우</span><span class="kw-tag">아이섀도우 스틱</span><span class="kw-tag">그라데이션 아이섀도우</span></div>
     </td>
         <td>3</td>
@@ -2486,8 +2489,8 @@
         <td>1,777</td>
         <td style="color:#1a7f37;font-weight:700">+23%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">양념통</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">양념통</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">유리 양념통 4개 세트</span><span class="kw-tag">스푼 수납 양념통</span><span class="kw-tag">전용 스푼 포함 양념통</span></div>
     </td>
         <td>3</td>
@@ -2504,8 +2507,8 @@
         <td>1,755</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">염색약</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">염색약</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">프리미엄 살롱 헤어 염색약</span><span class="kw-tag">탈색 없는 염색약</span><span class="kw-tag">셀프 헤어 염색약</span></div>
     </td>
         <td>3</td>
@@ -2522,8 +2525,8 @@
         <td>17,247</td>
         <td style="color:#1a7f37;font-weight:700">+83%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">욕조</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">욕조</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">이동식 욕조</span><span class="kw-tag">패브릭 접이식 욕조</span><span class="kw-tag">간이 욕조</span></div>
     </td>
         <td>3</td>
@@ -2540,8 +2543,8 @@
         <td>8,682</td>
         <td style="color:#1a7f37;font-weight:700">+388%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">의류</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">의류</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">강아지 의류</span><span class="kw-tag">캔 포장 의류</span><span class="kw-tag">로고 포인트 셋업</span></div>
     </td>
         <td>3</td>
@@ -2561,8 +2564,8 @@
         <td>4,386</td>
         <td style="color:#1a7f37;font-weight:700">+165%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">의류관리용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">의류관리용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">옷 프린트 복원 용액</span><span class="kw-tag">옷 복원 용액</span><span class="kw-tag">옷 프린팅 복구 액체</span></div>
     </td>
         <td>3</td>
@@ -2579,8 +2582,8 @@
         <td>5,953</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">자동차</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">자동차</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">소형 전기자동차</span><span class="kw-tag">미니카</span><span class="kw-tag">초소형 전기차</span></div>
     </td>
         <td>3</td>
@@ -2600,8 +2603,8 @@
         <td>20,099</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">접착제</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">접착제</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">박물관용 접착제</span><span class="kw-tag">주사기형 초강력 접착제</span><span class="kw-tag">독일 초강력 순간접착제</span></div>
     </td>
         <td>3</td>
@@ -2618,8 +2621,8 @@
         <td>6,873</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">책장</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">책장</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">슬라이딩 만화책 책장</span><span class="kw-tag">모던 우드톤 조명 책장</span><span class="kw-tag">아크릴 회전 책장</span></div>
     </td>
         <td>3</td>
@@ -2639,8 +2642,8 @@
         <td>3,255</td>
         <td style="color:#1a7f37;font-weight:700">+45%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">체인</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">체인</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">스노우 체인</span><span class="kw-tag">휴대용 스노우체인</span><span class="kw-tag">케이블 타이어 스노우 체인</span></div>
     </td>
         <td>3</td>
@@ -2660,8 +2663,8 @@
         <td>4,017</td>
         <td style="color:#1a7f37;font-weight:700">+10%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">추적기</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">추적기</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">GPS 추적기</span><span class="kw-tag">카드 체크</span><span class="kw-tag">카드형 위치 추적기</span></div>
     </td>
         <td>3</td>
@@ -2678,8 +2681,8 @@
         <td>3,647</td>
         <td style="color:#1a7f37;font-weight:700">+49%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">카드</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">카드</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">메탈 커스텀 카드</span><span class="kw-tag">커스텀 골드 카드</span><span class="kw-tag">커스텀 메탈 카드</span></div>
     </td>
         <td>3</td>
@@ -2696,8 +2699,8 @@
         <td>8,315</td>
         <td style="color:#1a7f37;font-weight:700">+344%</td>
     </tr><tr data-avg="pos" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">카메라</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">카메라</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">사이드미러 카메라</span><span class="kw-tag">소형 홈캠</span><span class="kw-tag">무선 후방 카메라</span></div>
     </td>
         <td>3</td>
@@ -2717,8 +2720,8 @@
         <td>2,483</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">캐비넷</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">캐비넷</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">철제 캐비넷</span><span class="kw-tag">파일 캐비넷</span><span class="kw-tag">서랍형 수납 캐비넷</span></div>
     </td>
         <td>3</td>
@@ -2735,8 +2738,8 @@
         <td>12,446</td>
         <td style="color:#1a7f37;font-weight:700">+17%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">케어용품</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">케어용품</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">가구 스크래치 제거제</span><span class="kw-tag">가죽 케어 크림</span><span class="kw-tag">가죽케어 크림</span></div>
     </td>
         <td>3</td>
@@ -2756,8 +2759,8 @@
         <td>1,806</td>
         <td style="color:#1a7f37;font-weight:700">+9%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">쿠키</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">쿠키</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">감자시금치쿠키</span><span class="kw-tag">버터 쿠키</span><span class="kw-tag">대왕 쿠키</span></div>
     </td>
         <td>3</td>
@@ -2777,8 +2780,8 @@
         <td>3,763</td>
         <td style="color:#1a7f37;font-weight:700">+14%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">클레이</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">클레이</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">오븐 구우면 굳는 클레이</span><span class="kw-tag">투명 클레이</span><span class="kw-tag">천연 기반 클레이</span></div>
     </td>
         <td>3</td>
@@ -2798,8 +2801,8 @@
         <td>16,280</td>
         <td style="color:#1a7f37;font-weight:700">+257%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">키링</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">키링</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">DIY 사진 키링</span><span class="kw-tag">24기 순금 키링</span><span class="kw-tag">NFC 기능 키링</span></div>
     </td>
         <td>3</td>
@@ -2819,8 +2822,8 @@
         <td>11,640</td>
         <td style="color:#1a7f37;font-weight:700">+252%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">키트</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">키트</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">꽃 모양 DIY 키트</span><span class="kw-tag">미니백 DIY 키트</span><span class="kw-tag">마그넷 포토카드 1인 창업 키트</span></div>
     </td>
         <td>3</td>
@@ -2840,8 +2843,8 @@
         <td>2,539</td>
         <td style="color:#1a7f37;font-weight:700">+1%</td>
     </tr><tr data-avg="neg" data-med="neg">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">타월</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">타월</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">초강력 흡수 타월</span><span class="kw-tag">자석 타월</span><span class="kw-tag">고흡수력 세차 타월</span></div>
     </td>
         <td>3</td>
@@ -2858,8 +2861,8 @@
         <td>1,304</td>
         <td style="color:#cf222e;font-weight:700">+0%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">태블릿</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">태블릿</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">폴더블 태블릿 노트북</span><span class="kw-tag">11.8인치 터치 다이얼 태블릿</span><span class="kw-tag">게이밍 태블릿</span></div>
     </td>
         <td>3</td>
@@ -2876,8 +2879,8 @@
         <td>2,414</td>
         <td style="color:#1a7f37;font-weight:700">+15%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">트레이</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">트레이</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">다이소 재료 핸드메이드 에그 트레이</span><span class="kw-tag">세라믹 집 간식 트레이</span><span class="kw-tag">유럽 감성 에그 트레이</span></div>
     </td>
         <td>3</td>
@@ -2894,8 +2897,8 @@
         <td>10,222</td>
         <td style="color:#1a7f37;font-weight:700">+307%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">파티션</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">파티션</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">무타공 회전 파티션</span><span class="kw-tag">회전 파티션</span><span class="kw-tag">무타공 욕실 파티션</span></div>
     </td>
         <td>3</td>
@@ -2912,8 +2915,8 @@
         <td>2,473</td>
         <td style="color:#1a7f37;font-weight:700">+25%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">패치</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">패치</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">치아미백패치</span><span class="kw-tag">Y존 진정 보습 토너 패치</span><span class="kw-tag">입호흡 방지 패치</span></div>
     </td>
         <td>3</td>
@@ -2930,8 +2933,8 @@
         <td>5,855</td>
         <td style="color:#1a7f37;font-weight:700">+285%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">푸딩</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">푸딩</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">초콜릿 푸딩</span><span class="kw-tag">건강한 바나나 푸딩</span><span class="kw-tag">우유 푸딩</span></div>
     </td>
         <td>3</td>
@@ -2948,8 +2951,8 @@
         <td>2,468</td>
         <td style="color:#1a7f37;font-weight:700">+52%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">프라이머</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">프라이머</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">모공커버 프라이머</span></div>
     </td>
         <td>3</td>
@@ -2969,8 +2972,8 @@
         <td>6,915</td>
         <td style="color:#1a7f37;font-weight:700">+94%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">프로젝터</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">프로젝터</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">180도 회전 빔 프로젝터</span><span class="kw-tag">레이저 라이팅 프로젝터</span></div>
     </td>
         <td>3</td>
@@ -2987,8 +2990,8 @@
         <td>10,876</td>
         <td style="color:#1a7f37;font-weight:700">+195%</td>
     </tr><tr data-avg="pos" data-med="pos">
-        <td class="col-ptype has-tip">
-        <span class="tip-label tip-label-ptype">필통</span>
+        <td class="col-ptype">
+        <span class="has-tip tip-label-ptype">필통</span>
         <div class="tip-box tip-box-kw"><span class="kw-tag">삼각형 경사구조 실리콘 필통</span><span class="kw-tag">천필통</span><span class="kw-tag">전면 오픈 실리콘 필통</span></div>
     </td>
         <td>3</td>
