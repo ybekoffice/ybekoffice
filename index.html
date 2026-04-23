@@ -8726,8 +8726,20 @@ function applyFilters() {
 }
 function filterP2() {
   const q = document.getElementById('s2').value.toLowerCase();
-  document.querySelectorAll('#p2content tbody tr').forEach(r => {
-    r.classList.toggle('hidden', q && !r.textContent.toLowerCase().includes(q));
+  document.querySelectorAll('#p2content .section').forEach(section => {
+    const badge = section.querySelector('.badge');
+    if (!badge.dataset.original) badge.dataset.original = badge.textContent;
+
+    let matchCount = 0;
+    section.querySelectorAll('tbody tr').forEach(r => {
+      const hit = !q || r.textContent.toLowerCase().includes(q);
+      r.classList.toggle('hidden', !hit);
+      if (hit) matchCount++;
+    });
+
+    badge.textContent = q
+      ? `${badge.dataset.original} · 검색 ${matchCount}개`
+      : badge.dataset.original;
   });
 }
 </script>
