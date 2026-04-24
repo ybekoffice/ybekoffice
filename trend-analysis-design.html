@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소재 트렌드 분석 시스템 설계</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #232636;
+    --border: #2e3248;
+    --text: #e2e4f0;
+    --muted: #7c829e;
+    --green: #4ade80;
+    --green-dim: #1a3a28;
+    --yellow: #fbbf24;
+    --yellow-dim: #3a2e10;
+    --blue: #60a5fa;
+    --blue-dim: #1a2a3a;
+    --gray-dim: #1e1e24;
+    --accent: #818cf8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 48px 24px 80px;
+  }
+
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 28px;
+    margin-bottom: 48px;
+  }
+  .header .label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .header p { color: var(--muted); font-size: 14px; }
+
+  /* Section */
+  section { margin-bottom: 56px; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  p { color: var(--muted); margin-bottom: 12px; }
+  strong { color: var(--text); }
+
+  /* Signal Cards */
+  .signal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 640px) {
+    .signal-grid { grid-template-columns: 1fr; }
+  }
+
+  .signal-card {
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid;
+  }
+  .signal-card.green {
+    background: var(--green-dim);
+    border-color: #2a5a3a;
+  }
+  .signal-card.yellow {
+    background: var(--yellow-dim);
+    border-color: #5a4a18;
+  }
+  .signal-card.blue {
+    background: var(--blue-dim);
+    border-color: #1a3a5a;
+  }
+
+  .signal-icon { font-size: 24px; margin-bottom: 10px; }
+  .signal-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .signal-card.green .signal-title { color: var(--green); }
+  .signal-card.yellow .signal-title { color: var(--yellow); }
+  .signal-card.blue .signal-title { color: var(--blue); }
+
+  .signal-condition {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  .signal-condition span {
+    display: inline-block;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin: 2px 2px 2px 0;
+    font-size: 11px;
+  }
+  .signal-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* Scatter Plot */
+  .scatter-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .scatter-title {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .scatter-container { position: relative; }
+
+  svg.scatter {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Method Cards */
+  .method-list { display: flex; flex-direction: column; gap: 16px; }
+  .method-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .method-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--border);
+    flex-shrink: 0;
+    width: 32px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .method-body h3 { margin-bottom: 4px; }
+  .method-body p { margin-bottom: 0; font-size: 14px; }
+  .method-quote {
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* Data Table */
+  .data-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .data-section-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    padding: 10px 16px;
+    text-align: left;
+    color: var(--muted);
+    font-weight: 500;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(46,50,72,0.5);
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge.green { background: var(--green-dim); color: var(--green); }
+  .badge.yellow { background: var(--yellow-dim); color: var(--yellow); }
+  .badge.blue { background: var(--blue-dim); color: var(--blue); }
+  .badge.gray { background: var(--gray-dim); color: var(--muted); }
+
+  .metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+  }
+  .metric.up { color: var(--green); }
+  .metric.flat { color: var(--muted); }
+  .metric.none { color: var(--border); }
+
+  /* UI Wireframe */
+  .wireframe {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .wf-titlebar {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.02);
+  }
+  .wf-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .wf-title { font-size: 12px; color: var(--muted); margin-left: 4px; }
+  .wf-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    padding: 0 16px;
+  }
+  .wf-tab {
+    padding: 10px 16px;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: default;
+    border-bottom: 2px solid transparent;
+  }
+  .wf-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .wf-body { padding: 20px; }
+  .wf-filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .wf-filter {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .wf-layout { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
+  @media (max-width: 640px) { .wf-layout { grid-template-columns: 1fr; } }
+
+  .wf-chart {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wf-sidebar { display: flex; flex-direction: column; gap: 8px; }
+  .wf-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .wf-card-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .wf-card-sub { font-size: 11px; color: var(--muted); }
+  .wf-detail {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 12px;
+  }
+  .wf-detail-title { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .wf-script-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    border-left: 3px solid var(--border);
+  }
+  .wf-script-card.green { border-left-color: var(--green); }
+
+  /* Naver section */
+  .naver-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 640px) { .naver-grid { grid-template-columns: 1fr; } }
+  .naver-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .naver-box h3 { font-size: 14px; margin-bottom: 6px; }
+  .naver-box p { font-size: 13px; }
+
+  /* Flow */
+  .flow {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .flow-row:last-child { margin-bottom: 0; }
+  .flow-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: var(--text);
+    flex-shrink: 0;
+  }
+  .flow-arrow { color: var(--border); font-size: 16px; flex-shrink: 0; }
+  .flow-note { font-size: 12px; color: var(--muted); }
+  .flow-plus {
+    font-size: 16px;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="label">Ringbob · 설계 문서</div>
+    <h1>소재 트렌드 분석 시스템</h1>
+    <p>고성과 콘텐츠 데이터 × 검색 플랫폼 신호 → 앞으로 뜰 소재 발굴 &nbsp;·&nbsp; 2026-04-24</p>
+  </div>
+
+  <!-- Section 1: 세 가지 신호 -->
+  <section>
+    <div class="section-label">핵심 로직</div>
+    <h2>두 신호의 교차로 세 가지 상태를 읽는다</h2>
+
+    <div class="signal-grid">
+      <div class="signal-card green">
+        <div class="signal-icon">🟢</div>
+        <div class="signal-title">성장 확인</div>
+        <div class="signal-condition">
+          <span>내 데이터 점유율 ↑</span><br>
+          <span>검색량 ↑</span>
+        </div>
+        <div class="signal-desc">니즈와 공급이 동시에 증가. 지금 당장 만들 수 있는 가장 안전한 소재.</div>
+      </div>
+
+      <div class="signal-card yellow">
+        <div class="signal-icon">🟡</div>
+        <div class="signal-title">선도 / 과잉?</div>
+        <div class="signal-condition">
+          <span>내 데이터 점유율 ↑</span><br>
+          <span>검색량 → 또는 ↓</span>
+        </div>
+        <div class="signal-desc">콘텐츠가 먼저 달리는 상태. 유저에게 새로운 소재거나, 이미 공급이 넘친 신호일 수 있음. 주의 필요.</div>
+      </div>
+
+      <div class="signal-card blue">
+        <div class="signal-icon">🔷</div>
+        <div class="signal-title">블루오션</div>
+        <div class="signal-condition">
+          <span>내 데이터 없음</span><br>
+          <span>검색량 ↑</span>
+        </div>
+        <div class="signal-desc">사람들은 찾고 있는데 아직 만든 사람이 없음. 선점 가능한 소재.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: 산점도 -->
+  <section>
+    <div class="section-label">핵심 시각화</div>
+    <h2>2×2 산점도: 소재 지도</h2>
+
+    <div class="scatter-wrap">
+      <div class="scatter-title">X축: 네이버 검색량 증가율 &nbsp;·&nbsp; Y축: 내 데이터 고성과 점유율 증가율 &nbsp;·&nbsp; 점 크기: 평균 댓글수</div>
+      <svg class="scatter" viewBox="0 0 560 440" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background quadrants -->
+        <rect x="60" y="20" width="220" height="190" fill="#1a3a28" opacity="0.4" rx="4"/>
+        <rect x="290" y="20" width="220" height="190" fill="#3a2e10" opacity="0.3" rx="4"/>
+        <rect x="60" y="220" width="220" height="190" fill="#1a1e24" opacity="0.3" rx="4"/>
+        <rect x="290" y="220" width="220" height="190" fill="#1a2a3a" opacity="0.4" rx="4"/>
+
+        <!-- Axis lines -->
+        <line x1="60" y1="215" x2="520" y2="215" stroke="#2e3248" stroke-width="1.5"/>
+        <line x1="285" y1="20" x2="285" y2="420" stroke="#2e3248" stroke-width="1.5"/>
+
+        <!-- Quadrant labels -->
+        <text x="170" y="50" text-anchor="middle" fill="#4ade80" font-size="13" font-weight="700">✅ 성장 확인</text>
+        <text x="170" y="66" text-anchor="middle" fill="#7c829e" font-size="11">니즈 일치 · 안전한 소재</text>
+
+        <text x="400" y="50" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="700">🟡 선도 / 과잉?</text>
+        <text x="400" y="66" text-anchor="middle" fill="#7c829e" font-size="11">공급 과잉 위험 · 주의</text>
+
+        <text x="400" y="280" text-anchor="middle" fill="#60a5fa" font-size="13" font-weight="700">🔷 블루오션</text>
+        <text x="400" y="296" text-anchor="middle" fill="#7c829e" font-size="11">공급 부족 · 선점 기회</text>
+
+        <text x="170" y="280" text-anchor="middle" fill="#3a3f58" font-size="13" font-weight="700">⬜ 침체</text>
+        <text x="170" y="296" text-anchor="middle" fill="#3a3f58" font-size="11">수요·공급 모두 낮음</text>
+
+        <!-- Data points: 성장 확인 -->
+        <circle cx="160" cy="90" r="22" fill="#4ade80" opacity="0.25"/>
+        <circle cx="160" cy="90" r="22" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="160" y="94" text-anchor="middle" fill="#4ade80" font-size="10">캡슐커피</text>
+
+        <circle cx="210" cy="130" r="14" fill="#4ade80" opacity="0.25"/>
+        <circle cx="210" cy="130" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="210" y="134" text-anchor="middle" fill="#4ade80" font-size="10">식이섬유</text>
+
+        <circle cx="110" cy="160" r="10" fill="#4ade80" opacity="0.2"/>
+        <circle cx="110" cy="160" r="10" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="110" y="164" text-anchor="middle" fill="#4ade80" font-size="9">무선청소기</text>
+
+        <!-- Data points: 선도/과잉 -->
+        <circle cx="350" cy="80" r="16" fill="#fbbf24" opacity="0.2"/>
+        <circle cx="350" cy="80" r="16" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="350" y="84" text-anchor="middle" fill="#fbbf24" font-size="10">수납박스</text>
+
+        <circle cx="430" cy="140" r="11" fill="#fbbf24" opacity="0.2"/>
+        <circle cx="430" cy="140" r="11" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="430" y="144" text-anchor="middle" fill="#fbbf24" font-size="9">칫솔살균기</text>
+
+        <!-- Data points: 블루오션 -->
+        <circle cx="420" cy="340" r="18" fill="#60a5fa" opacity="0.2"/>
+        <circle cx="420" cy="340" r="18" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="420" y="344" text-anchor="middle" fill="#60a5fa" font-size="10">에어프라이어</text>
+        <text x="420" y="356" text-anchor="middle" fill="#60a5fa" font-size="9">세척용품</text>
+
+        <circle cx="360" cy="370" r="12" fill="#60a5fa" opacity="0.2"/>
+        <circle cx="360" cy="370" r="12" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="360" y="374" text-anchor="middle" fill="#60a5fa" font-size="9">폼클렌저</text>
+
+        <!-- Data points: 침체 -->
+        <circle cx="130" cy="340" r="9" fill="#2e3248" opacity="0.5"/>
+        <circle cx="130" cy="340" r="9" fill="none" stroke="#3a3f58" stroke-width="1.5"/>
+        <text x="130" y="344" text-anchor="middle" fill="#3a3f58" font-size="9">일반청소포</text>
+
+        <circle cx="180" cy="370" r="7" fill="#2e3248" opacity="0.5"/>
+        <circle cx="180" cy="370" r="7" fill="none" stroke="#3a3f58" stroke-width="1.5"/>
+        <text x="180" y="374" text-anchor="middle" fill="#3a3f58" font-size="9">면봉</text>
+
+        <!-- Axis labels -->
+        <text x="290" y="438" text-anchor="middle" fill="#7c829e" font-size="12">네이버 검색량 증가율 →</text>
+        <text x="20" y="215" text-anchor="middle" fill="#7c829e" font-size="12" transform="rotate(-90, 20, 215)">내 데이터 점유율 증가율 →</text>
+
+        <!-- Zero labels -->
+        <text x="282" y="212" text-anchor="end" fill="#3a3f58" font-size="10">0</text>
+        <text x="57" y="218" text-anchor="end" fill="#3a3f58" font-size="10">0</text>
+
+        <!-- Legend -->
+        <circle cx="72" cy="412" r="8" fill="#4ade80" opacity="0.2" stroke="#4ade80" stroke-width="1.2"/>
+        <text x="84" y="416" fill="#7c829e" font-size="11">점 크기 = 평균 댓글수</text>
+        <circle cx="210" cy="412" r="6" fill="#60a5fa" opacity="0.2" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="3,2"/>
+        <text x="220" y="416" fill="#7c829e" font-size="11">점선 = 내 데이터 미보유</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Section 3: 소재 카드 테이블 -->
+  <section>
+    <div class="section-label">UI 컴포넌트</div>
+    <h2>소재 카드 리스트</h2>
+    <p>산점도 옆에 위치. 점 클릭 시 해당 소재 카드가 하이라이트되고, 하단에 고성과 대본 예시가 펼쳐진다.</p>
+
+    <div class="data-section">
+      <div class="data-section-header">
+        <span>소재별 신호 현황</span>
+        <span style="color: var(--muted); font-size: 11px;">최근 3개월 기준</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>소재 (product_type)</th>
+            <th>상태</th>
+            <th>내 데이터 점유율</th>
+            <th>네이버 검색량</th>
+            <th>평균 댓글수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>캡슐커피머신</strong></td>
+            <td><span class="badge green">🟢 성장 확인</span></td>
+            <td><span class="metric up">↑ 18%</span></td>
+            <td><span class="metric up">↑ 34%</span></td>
+            <td>4,820</td>
+          </tr>
+          <tr>
+            <td><strong>식이섬유파우더</strong></td>
+            <td><span class="badge green">🟢 성장 확인</span></td>
+            <td><span class="metric up">↑ 11%</span></td>
+            <td><span class="metric up">↑ 22%</span></td>
+            <td>3,160</td>
+          </tr>
+          <tr>
+            <td><strong>수납박스</strong></td>
+            <td><span class="badge yellow">🟡 선도/과잉?</span></td>
+            <td><span class="metric up">↑ 22%</span></td>
+            <td><span class="metric flat">→ 0%</span></td>
+            <td>2,450</td>
+          </tr>
+          <tr>
+            <td><strong>에어프라이어 세척용품</strong></td>
+            <td><span class="badge blue">🔷 블루오션</span></td>
+            <td><span class="metric none">없음</span></td>
+            <td><span class="metric up">↑ 41%</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>일반청소포</strong></td>
+            <td><span class="badge gray">⬜ 침체</span></td>
+            <td><span class="metric flat">↓ 5%</span></td>
+            <td><span class="metric flat">↓ 3%</span></td>
+            <td>1,240</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4: 화면 구성 Wireframe -->
+  <section>
+    <div class="section-label">화면 설계</div>
+    <h2>UI 전체 구성</h2>
+
+    <div class="wireframe">
+      <div class="wf-titlebar">
+        <div class="wf-dot" style="background:#ff5f57"></div>
+        <div class="wf-dot" style="background:#febc2e"></div>
+        <div class="wf-dot" style="background:#28c840"></div>
+        <div class="wf-title">소재 트렌드 분석 · 링밥</div>
+      </div>
+
+      <div class="wf-tabs">
+        <div class="wf-tab active">📍 소재 지도</div>
+        <div class="wf-tab">🔷 블루오션 탐색</div>
+        <div class="wf-tab">📊 구조 vs 소구점</div>
+      </div>
+
+      <div class="wf-body">
+        <div class="wf-filters">
+          <div class="wf-filter">📅 기간: 최근 3개월 ▾</div>
+          <div class="wf-filter">📦 카테고리 ▾</div>
+          <div class="wf-filter">🏷️ 상황태그 ▾</div>
+        </div>
+
+        <div class="wf-layout">
+          <div class="wf-chart">
+            <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" style="opacity:0.7">
+              <line x1="15" y1="90" x2="165" y2="90" stroke="#2e3248" stroke-width="1"/>
+              <line x1="90" y1="15" x2="90" y2="165" stroke="#2e3248" stroke-width="1"/>
+              <circle cx="55" cy="45" r="14" fill="#4ade80" opacity="0.3" stroke="#4ade80" stroke-width="1.5"/>
+              <circle cx="40" cy="65" r="9" fill="#4ade80" opacity="0.2" stroke="#4ade80" stroke-width="1.5"/>
+              <circle cx="120" cy="50" r="11" fill="#fbbf24" opacity="0.2" stroke="#fbbf24" stroke-width="1.5"/>
+              <circle cx="140" cy="130" r="13" fill="#60a5fa" opacity="0.2" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="3,2"/>
+              <circle cx="50" cy="130" r="7" fill="#2e3248" opacity="0.6" stroke="#3a3f58" stroke-width="1"/>
+              <text x="55" y="49" text-anchor="middle" fill="#4ade80" font-size="8">캡슐커피</text>
+              <text x="140" y="134" text-anchor="middle" fill="#60a5fa" font-size="8">에어프라이어</text>
+              <text x="90" y="175" text-anchor="middle" fill="#3a3f58" font-size="9">검색량 →</text>
+            </svg>
+          </div>
+
+          <div class="wf-sidebar">
+            <div class="wf-card">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <div class="wf-card-title">캡슐커피머신</div>
+                <span class="badge green" style="font-size:10px">🟢 성장</span>
+              </div>
+              <div class="wf-card-sub">점유율 ↑18% &nbsp;·&nbsp; 검색 ↑34%</div>
+            </div>
+            <div class="wf-card" style="border-color:#fbbf24; opacity:0.7">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <div class="wf-card-title">수납박스</div>
+                <span class="badge yellow" style="font-size:10px">🟡 과잉?</span>
+              </div>
+              <div class="wf-card-sub">점유율 ↑22% &nbsp;·&nbsp; 검색 →0%</div>
+            </div>
+            <div class="wf-card" style="opacity:0.5">
+              <div class="wf-card-title" style="color:var(--muted)">에어프라이어 세척</div>
+              <div class="wf-card-sub">🔷 블루오션 · 검색 ↑41%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wf-detail">
+          <div class="wf-detail-title">📌 캡슐커피머신 · 고성과 대본 예시 (댓글수 순)</div>
+          <div class="wf-script-card green">
+            커피 회사 다니는 친구가 집들이 선물로 이걸 줬는데… &nbsp;<span style="color:#4ade80">댓글 8,541</span>
+          </div>
+          <div class="wf-script-card">
+            카페 매일 갔던 내가 집에만 있게 된 이유 &nbsp;<span style="color:#7c829e">댓글 4,210</span>
+          </div>
+          <div class="wf-script-card">
+            이거 하나로 아아 값 월 12만원 아꼈어요 &nbsp;<span style="color:#7c829e">댓글 3,890</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: 방법론 -->
+  <section>
+    <div class="section-label">방법론</div>
+    <h2>트렌드 소재 발굴 4가지 접근법</h2>
+
+    <div class="method-list">
+      <div class="method-item">
+        <div class="method-num">01</div>
+        <div class="method-body">
+          <h3>성장 속도 (Velocity)</h3>
+          <p>절대값이 아니라 <strong>속도</strong>를 본다. 같은 댓글 500개라도 올라온 지 2일이면 신호, 6개월이면 평범.</p>
+          <div class="method-quote">내 데이터 한계: 댓글수가 "수집 시점 누적값"이라 정확한 속도 측정은 불완전. created_at으로 보완.</div>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-num">02</div>
+        <div class="method-body">
+          <h3>점유율 변화</h3>
+          <p>전체 고성과 콘텐츠 중 특정 소재의 <strong>비중이 늘어나는지</strong> 추적. 3개월 전 vs 지금 비교.</p>
+          <div class="method-quote">내 데이터로 가능: created_at + product_type + comment_count 조합. 즉시 구현 가능.</div>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-num">03</div>
+        <div class="method-body">
+          <h3>신규 소재 탐지</h3>
+          <p>기존에 없던 product_type이 <strong>최근에 처음 등장했는데 댓글수가 높다</strong>면 새로운 시장 신호.</p>
+          <div class="method-quote">내 데이터로 가능: 최근 3개월에만 등장한 product_type 필터링으로 확인.</div>
+        </div>
+      </div>
+      <div class="method-item">
+        <div class="method-num">04</div>
+        <div class="method-body">
+          <h3>외부 검색량 교차 검증</h3>
+          <p>플랫폼 내부만으론 한계. <strong>사람들이 뭘 검색하는지</strong>를 같이 봐야 수요 확인 가능.</p>
+          <div class="method-quote">네이버 데이터랩 API (발급 완료): 검색어 트렌드 + 쇼핑인사이트 두 가지 활용 가능.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: 네이버 API -->
+  <section>
+    <div class="section-label">외부 신호 연결</div>
+    <h2>네이버 API 활용 방식</h2>
+
+    <div class="naver-grid" style="margin-bottom:20px">
+      <div class="naver-box">
+        <h3>검색어 트렌드 API</h3>
+        <p>특정 단어를 네이버에서 얼마나 검색하는지 시계열로 반환. product_type 키워드를 넣으면 검색 관심도 추이 확인 가능.</p>
+      </div>
+      <div class="naver-box">
+        <h3>쇼핑인사이트 API</h3>
+        <p>쇼핑 카테고리별 검색량 추이. 카테고리 코드 매핑이 필요하지만, 구매 의향이 있는 수요만 보여줌.</p>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-row">
+        <div class="flow-box">patterns.csv<br><span style="font-size:11px;color:var(--muted)">점유율 ↑ product_type 목록</span></div>
+        <div class="flow-plus">+</div>
+        <div class="flow-box">네이버 API<br><span style="font-size:11px;color:var(--muted)">해당 키워드 검색량 추이</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box" style="border-color:var(--accent)">신호 매트릭스<br><span style="font-size:11px;color:var(--accent)">성장/선도/블루오션 분류</span></div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px;padding-left:4px">
+        ⚠️ 설계 필요: 자유 서술 product_type → 네이버 카테고리 코드 매핑 작업 한 번 필요
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: 탭 3 -->
+  <section>
+    <div class="section-label">추가 분석</div>
+    <h2>대본 구조 vs 소구점 — 뭐가 성과를 결정하는가?</h2>
+    <p>같은 소재 안에서도 성과 차이가 나는 원인을 두 가지로 나눠 비교한다.</p>
+
+    <div class="naver-grid">
+      <div class="naver-box" style="border-color:#2a5a3a">
+        <h3 style="color:var(--green)">대본 구조 (hook_type · persuasion_arc)</h3>
+        <p>같은 product_type 안에서 hook_type이 다를 때 댓글수 차이 → 구조가 얼마나 영향을 주는지</p>
+      </div>
+      <div class="naver-box" style="border-color:#1a3a5a">
+        <h3 style="color:var(--blue)">소구점 (selling_point)</h3>
+        <p>같은 hook_type 안에서 selling_point 패턴이 다를 때 댓글수 차이 → 무엇을 어필하느냐의 영향</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
